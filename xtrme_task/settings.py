@@ -13,19 +13,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import sys
 
-""" To Get credentials """
-current = os.path.dirname(os.path.realpath(__file__))
-# Getting the parent directory name
-# where the current directory is present.
-parent = os.path.dirname(current)
-# adding the parent directory to 
-# the sys.path.
-sys.path.append(parent)
-# now we can import the module in the parent
-# directory.
-from credentials import *
-""" End """
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -34,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = my_secret_key
+SECRET_KEY = '!9af+jzhke+22#&2nx%mx^+mc*5u2m&z=fa-ddkm@nlau7u+q%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -133,18 +120,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-
 import os
 
+STATIC_URL = '/static/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = (
     os.path.join(SETTINGS_PATH, 'templates'),
 )
 
-OPEN_WEATHER_API_KEY = my_weather_api_key
+OPEN_WEATHER_API_KEY = 'ecafcb831b87fefb12c6b5c9c39e7ed0'
 
 # EMAIL CONFIGURATION
 
@@ -152,5 +143,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = my_email
-EMAIL_HOST_PASSWORD = my_key
+EMAIL_HOST_USER = 'chakrabortyking500@gmail.com'
+EMAIL_HOST_PASSWORD = 'wzgftjdxzskjtnjy'
