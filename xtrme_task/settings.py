@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!9af+jzhke+22#&2nx%mx^+mc*5u2m&z=fa-ddkm@nlau7u+q%'
+SECRET_KEY = os.environ.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -137,7 +137,7 @@ TEMPLATE_DIRS = (
     os.path.join(SETTINGS_PATH, 'templates'),
 )
 
-OPEN_WEATHER_API_KEY = 'ecafcb831b87fefb12c6b5c9c39e7ed0'
+OPEN_WEATHER_API_KEY = os.environ.get('open_weather_api_key')
 
 # EMAIL CONFIGURATION
 
@@ -145,5 +145,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'chakrabortyking500@gmail.com'
-EMAIL_HOST_PASSWORD = 'wzgftjdxzskjtnjy'
+EMAIL_HOST_USER = os.environ.get('email_host_user')
+EMAIL_HOST_PASSWORD = os.environ.get('email_host_password')
